@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - KOLBook</title>
+</head>
+<body>
+<div class="login-wrapper">
+    <div class="login-showcase">
+        <div class="showcase-content">
+            <h1>Connect. Create. Captivate.</h1>
+            <p>The premier platform for finding and booking influential talent.</p>
+        </div>
+    </div>
+
+    <div class="login-form-wrapper">
+        <div class="login-box">
+            <div class="login-header">
+                <a href="/" class="login-brand">KOLBook</a>
+                <h2>Welcome Back</h2>
+                <p>Please enter your details to sign in.</p>
+            </div>
+            <form class="login-form">
+                <div class="input-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" placeholder="you@example.com" required>
+                </div>
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <div class="form-actions">
+                    <a href="#" class="forgot-password">Forgot Password?</a>
+                </div>
+                <button type="submit" class="btn-primary login-btn">Sign In</button>
+            </form>
+            <div class="social-login">
+                <span class="social-login-text">Or sign in with</span>
+                <div class="social-buttons">
+                    <button class="social-btn google"><img src="https://www.svgrepo.com/show/475656/google-color.svg" alt="Google"> Google</button>
+                    <button class="social-btn facebook"><img src="https://www.svgrepo.com/show/448224/facebook.svg" alt="Facebook"> Facebook</button>
+                </div>
+            </div>
+            <div class="signup-link">
+                <p>Don't have an account? <a href="#">Sign Up for free</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="module" src="/src/ts/login.ts"></script>
+</body>
+</html>

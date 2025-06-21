@@ -19,54 +19,81 @@ body {
     padding: 0 20px;
 }
 
-/* Header Styles */
+/* =================================== */
+/* Header & Navbar Styles (REVISED)    */
+/* =================================== */
 .header {
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(12px) saturate(180%);
+    -webkit-backdrop-filter: blur(12px) saturate(180%);
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 1000;
-    box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+    transition: box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+/* Thêm shadow khi scroll */
+.header.scrolled {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.07);
+    background: rgba(255, 255, 255, 0.95);
 }
 
 .navbar {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 1rem 2rem;
-    max-width: 1200px;
+    padding: 1.2rem 2.5rem; /* Tăng padding để cân đối hơn */
+    max-width: 1400px; /* Mở rộng max-width cho màn hình lớn */
     margin: 0 auto;
 }
 
 .nav-brand h1 {
     color: #667eea;
-    font-size: 1.8rem;
+    font-size: 2rem;
     font-weight: 700;
+    font-family: 'Playfair Display', serif;
 }
 
 .nav-menu {
     display: flex;
     list-style: none;
-    gap: 2rem;
+    gap: 2.5rem; /* Tăng khoảng cách giữa các mục */
 }
 
 .nav-menu a {
     text-decoration: none;
     color: #333;
-    font-weight: 500;
+    font-weight: 600; /* Tăng độ đậm cho dễ đọc */
+    font-size: 1rem;
+    position: relative;
+    padding-bottom: 5px;
     transition: color 0.3s;
+}
+
+.nav-menu a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #667eea;
+    transition: width 0.3s ease-out;
 }
 
 .nav-menu a:hover {
     color: #667eea;
 }
 
+.nav-menu a:hover::after {
+    width: 100%;
+}
+
 .nav-actions {
     display: flex;
     gap: 1rem;
 }
-
 /* Button Styles */
 .btn-primary, .btn-secondary, .btn-outline {
     padding: 0.75rem 1.5rem;
@@ -428,4 +455,219 @@ body {
 /* Smooth transition */
 .profile-card {
     transition: all 0.6s ease-in-out;
+}
+
+
+
+
+
+
+
+/* Thêm vào khu vực Reset & Base Styles */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+}
+
+.nav-brand h1 {
+    font-family: 'Playfair Display', serif; /* Đảm bảo brand cũng dùng font này */
+}
+
+/* How It Works Section */
+.how-it-works {
+    padding: 6rem 0;
+    background: rgba(0,0,0,0.05);
+}
+
+.how-it-works .section-header h2 {
+    color: white;
+}
+.how-it-works .section-header p {
+    color: rgba(255,255,255,0.8);
+}
+
+.how-it-works-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5rem;
+    padding: 0 2rem;
+}
+
+.step-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+}
+
+.step-number {
+    font-size: 3.5rem;
+    font-weight: 700;
+    font-family: 'Playfair Display', serif;
+    color: rgba(255, 255, 255, 0.2);
+    line-height: 1;
+}
+
+.step-content h3 {
+    font-size: 1.5rem;
+    color: white;
+    margin-bottom: 0.5rem;
+}
+
+.step-content p {
+    color: rgba(255,255,255,0.7);
+}
+
+/* Our Story Section */
+.our-story {
+    padding: 6rem 0;
+    background: #fff;
+}
+
+.story-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 4rem;
+}
+
+.story-image img {
+    width: 100%;
+    border-radius: 24px;
+    box-shadow: 0 12px 40px rgba(0,0,0,0.1);
+}
+
+.story-content h2 {
+    font-size: 2.8rem;
+    color: #333;
+    margin-bottom: 1.5rem;
+}
+
+.story-content p {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 2rem;
+    line-height: 1.8;
+}
+.story-content .btn-primary {
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+}
+
+@media (max-width: 992px) {
+    .story-container {
+        grid-template-columns: 1fr;
+    }
+}
+/* =================================== */
+/* KOL Card Popup Styles            */
+/* =================================== */
+
+.profile-card {
+    /* Đảm bảo position relative để popup định vị theo card */
+    position: relative;
+    overflow: hidden; /* Giấu các phần tử con vượt ra ngoài */
+}
+
+.kol-popup {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(20, 20, 30, 0.8);
+    backdrop-filter: blur(12px) saturate(150%);
+    -webkit-backdrop-filter: blur(12px) saturate(150%);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem;
+
+    /* Ẩn popup mặc định */
+    opacity: 0;
+    pointer-events: none; /* Không thể tương tác khi ẩn */
+
+    /* Transition cho hiệu ứng */
+    transition: opacity 0.4s ease-in-out;
+}
+
+/* HIỆN POPUP KHI HOVER VÀO CARD */
+.profile-card:hover .kol-popup {
+    opacity: 1;
+    pointer-events: auto; /* Cho phép tương tác */
+    transition-delay: 0.5s; /* Độ trễ 0.5s như yêu cầu */
+}
+
+/* Hiệu ứng làm mờ ảnh nền khi hover */
+.profile-card:hover .profile-img {
+    transform: scale(1.1);
+    filter: brightness(0.7);
+    transition: all 0.5s ease;
+}
+
+/* Ẩn thông tin cơ bản khi hover */
+.profile-card:hover .profile-info {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* Định dạng nội dung trong popup */
+.popup-content {
+    color: #fff;
+    transform: translateY(20px);
+    opacity: 0;
+    transition: all 0.4s ease-in-out 0.5s; /* Delay phải khớp với delay của popup */
+}
+.profile-card:hover .popup-content {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.popup-content h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.popup-bio {
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.7;
+    color: rgba(255,255,255,0.85);
+}
+
+.popup-tags {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+.popup-tags span {
+    background: rgba(255,255,255,0.15);
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+}
+
+.popup-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.popup-actions .btn-primary,
+.popup-actions .btn-secondary {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.popup-actions .btn-secondary {
+    background: rgba(255,255,255,0.2);
+    border: 1px solid rgba(255,255,255,0.4);
+    color: white;
+}
+.popup-actions .btn-secondary:hover {
+    background: white;
+    color: #333;
 }
