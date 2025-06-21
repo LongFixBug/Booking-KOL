@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KOL Booking Platform</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+  <!-- AOS Library -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<!-- AOS Script -->
+<!-- Thay thế đoạn script AOS cũ bằng đoạn này -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  // Đợi DOM load xong mới khởi tạo AOS
+  document.addEventListener('DOMContentLoaded', function() {
+    AOS.init({
+      duration: 800,
+      easing: 'ease-in-out',
+      once: false,        // Quan trọng: cho phép animation lặp lại
+      mirror: true,       // Quan trọng: reverse animation khi scroll lên
+      offset: 100,
+      // Thêm option này để tránh lỗi
+      disable: function() {
+        return window.innerWidth < 768;
+      }
+    });
+  });
+</script>
+
+</body>
+
+<body>
+<!-- Header -->
+<header class="header">
+  <nav class="navbar">
+    <div class="nav-brand">
+      <h1>KOLBook</h1>
+    </div>
+    <ul class="nav-menu">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#kols">KOLs</a></li>
+      <li><a href="#categories">Categories</a></li>
+      <li><a href="#pricing">Pricing</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="btn-secondary">Sign In</button>
+      <button class="btn-primary">Get Started</button>
+    </div>
+  </nav>
+</header>
+
+<!-- Hero Section với fade-up từ từ -->
+<section class="hero" id="home">
+  <div class="hero-content" data-aos="fade-up" data-aos-delay="200">
+    <h1 data-aos="fade-up" data-aos-delay="400">Book Top KOLs for Your Brand</h1>
+    <p data-aos="fade-up" data-aos-delay="600">Connect with influential creators and boost your marketing campaigns with our curated network of Key Opinion Leaders.</p>
+    <div class="hero-actions" data-aos="fade-up" data-aos-delay="800">
+      <button class="btn-primary large">Browse KOLs</button>
+      <button class="btn-outline large">Learn More</button>
+    </div>
+  </div>
+  <div class="hero-stats" data-aos="fade-up" data-aos-delay="1000">
+    <div class="stat-item" data-aos="zoom-in" data-aos-delay="1200">
+      <h3>500+</h3>
+      <p>Active KOLs</p>
+    </div>
+    <div class="stat-item" data-aos="zoom-in" data-aos-delay="1400">
+      <h3>10M+</h3>
+      <p>Total Reach</p>
+    </div>
+    <div class="stat-item" data-aos="zoom-in" data-aos-delay="1600">
+      <h3>98%</h3>
+      <p>Success Rate</p>
+    </div>
+  </div>
+</section>
+
+<!-- Featured KOLs với hiệu ứng trái phải -->
+<section class="featured-kols" id="kols">
+  <div class="container">
+    <div class="section-header" data-aos="fade-up">
+      <h2>Featured KOLs</h2>
+      <p>Discover our top-performing creators across different niches</p>
+    </div>
+
+    <div class="kol-grid">
+      <!-- KOL Card 1 - từ trái -->
+      <div class="profile-card" data-aos="fade-right" data-aos-delay="100">
+        <img class="profile-img" src="avt.jpeg" alt="Sophie Bennett" />
+        <div class="profile-info">
+          <h2>
+            Sophie Bennett
+            <span class="verified"><i class="fas fa-check-circle"></i></span>
+          </h2>
+          <p>Product Designer focused on intuitive user experiences.</p>
+          <div class="profile-stats">
+            <span><i class="fas fa-users"></i> 312K</span>
+            <span><i class="fas fa-heart"></i> 48K</span>
+            <button class="follow-btn">Book Now</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- KOL Card 2 - từ phải -->
+      <div class="profile-card" data-aos="fade-left" data-aos-delay="200">
+        <img class="profile-img" src="avt2.jpeg" alt="Alex Chen" />
+        <div class="profile-info">
+          <h2>
+            Alex Chen
+            <span class="verified"><i class="fas fa-check-circle"></i></span>
+          </h2>
+          <p>Tech reviewer & lifestyle content creator.</p>
+          <div class="profile-stats">
+            <span><i class="fas fa-users"></i> 850K</span>
+            <span><i class="fas fa-heart"></i> 92K</span>
+            <button class="follow-btn">Book Now</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- KOL Card 3 - từ trái -->
+      <div class="profile-card" data-aos="fade-right" data-aos-delay="300">
+        <img class="profile-img" src="avt3.jpg" alt="Maria Santos" />
+        <div class="profile-info">
+          <h2>
+            Maria Santos
+            <span class="verified"><i class="fas fa-check-circle"></i></span>
+          </h2>
+          <p>Fashion & beauty influencer with global reach.</p>
+          <div class="profile-stats">
+            <span><i class="fas fa-users"></i> 1.2M</span>
+            <span><i class="fas fa-heart"></i> 156K</span>
+            <button class="follow-btn">Book Now</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- KOL Card 4 - từ phải -->
+      <div class="profile-card" data-aos="fade-left" data-aos-delay="400">
+        <img class="profile-img" src="avt4.jpg" alt="David Kim" />
+        <div class="profile-info">
+          <h2>
+            David Kim
+            <span class="verified"><i class="fas fa-check-circle"></i></span>
+          </h2>
+          <p>Fitness coach & wellness advocate.</p>
+          <div class="profile-stats">
+            <span><i class="fas fa-users"></i> 680K</span>
+            <span><i class="fas fa-heart"></i> 75K</span>
+            <button class="follow-btn">Book Now</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Categories với hiệu ứng zoom-in -->
+<section class="categories" id="categories">
+  <div class="container">
+    <div class="section-header" data-aos="fade-up">
+      <h2>Browse by Category</h2>
+      <p>Find the perfect KOL for your industry</p>
+    </div>
+
+    <div class="category-grid">
+      <div class="category-card" data-aos="zoom-in" data-aos-delay="100">
+        <i class="fas fa-tshirt"></i>
+        <h3>Fashion</h3>
+        <p>Style influencers & fashion experts</p>
+      </div>
+      <div class="category-card" data-aos="zoom-in" data-aos-delay="200">
+        <i class="fas fa-laptop"></i>
+        <h3>Technology</h3>
+        <p>Tech reviewers & digital experts</p>
+      </div>
+      <div class="category-card" data-aos="zoom-in" data-aos-delay="300">
+        <i class="fas fa-dumbbell"></i>
+        <h3>Fitness</h3>
+        <p>Health & wellness coaches</p>
+      </div>
+      <div class="category-card" data-aos="zoom-in" data-aos-delay="400">
+        <i class="fas fa-utensils"></i>
+        <h3>Food</h3>
+        <p>Food bloggers & culinary experts</p>
+      </div>
+      <div class="category-card" data-aos="zoom-in" data-aos-delay="500">
+        <i class="fas fa-plane"></i>
+        <h3>Travel</h3>
+        <p>Travel enthusiasts & explorers</p>
+      </div>
+      <div class="category-card" data-aos="zoom-in" data-aos-delay="600">
+        <i class="fas fa-palette"></i>
+        <h3>Lifestyle</h3>
+        <p>Lifestyle content creators</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <h3>KOLBook</h3>
+        <p>Connecting brands with influential creators worldwide.</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-column">
+          <h4>Platform</h4>
+          <ul>
+            <li><a href="#">Browse KOLs</a></li>
+            <li><a href="#">How it Works</a></li>
+            <li><a href="#">Pricing</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Support</h4>
+          <ul>
+            <li><a href="#">Help Center</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
